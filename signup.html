@@ -9,19 +9,22 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Sign up</title>
     <style>
-        *{
+        * {
             margin: 0%;
         }
+
         .main {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        body{
+
+        body {
             box-sizing: border-box;
             font-family: Poppins;
         }
+
         form {
             width: 470px;
             padding: 20px;
@@ -29,15 +32,18 @@
             background-color: rgba(0, 0, 0, 0);
             box-shadow: 0px 10px 30px 10px rgb(51 51 51 / 10%);
         }
-        form > div{
+
+        form>div {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        label{
+
+        label {
             font-size: 20px;
         }
-        form > div > input {
+
+        form>div>input {
             width: 300px;
             height: 30px;
             font-size: 17px;
@@ -45,14 +51,16 @@
             border-radius: 12px;
             color: rgba(0, 0, 0, 0.883);
         }
-        .btn{
+
+        .btn {
             align-items: center;
             justify-content: center;
             margin: 10px;
         }
-        .btn > button{
-          background-color: cornflowerblue;
-          color: cornsilk;
+
+        .btn>button {
+            background-color: cornflowerblue;
+            color: cornsilk;
         }
     </style>
 </head>
@@ -70,7 +78,7 @@
     </div>
     <div class="main">
         <div class="form">
-            <form>
+            <form onsubmit="signUp(event)">
                 <div>
                     <label>Name</label>
                     <input type="text" placeholder="Name" id="name">
@@ -99,17 +107,31 @@
         </div>
     </div>
     <script>
-        let firstName = document.getElementById("name");
-        let phone = document.getElementById("contact");
-        let emailId = document.getElementById("email");
-        let pass = document.getElementById("password");
-        let obj = {
-            name : firstName.value,
-            phoneNo : phone.value,
-            email : emailId.value,
-            password : pass.value,
+        let objArray = []
+        function signUp(e) {
+            e.preventDefault();
+            let nameEl = document.getElementById("name");
+            let mobileNo = document.getElementById("contact");
+            let emailId = document.getElementById("email");
+            let pass = document.getElementById("password");
+            if (nameEl.value !== "" && mobileNo.value !== "" && emailId.value !== "" && pass.value !== "") {
+                let obj = {
+                    name: nameEl.value,
+                    phoneNo: mobileNo.value,
+                    email: emailId.value,
+                    password: pass.value,
+                }
+                objArray.push(obj);
+                console.log(objArray)
+                let jsonObj = JSON.stringify(objArray)
+                console.log(jsonObj)
+                window.localStorage.setItem("myObj", jsonObj);
+            }
+            else {
+                alert("Please fill all the details")
+            }
         }
-        console.log(obj)
+
     </script>
 </body>
 
