@@ -22,10 +22,81 @@
                 <input type="text" placeholder="Search">
                 <img src="icons/icons8-search.svg" alt="">
             </div>
-            <button><a href="./login.html">Login</a></button>
-            <button><a href="./signup.html">Sign Up</a></button>
+            <button><a href="./login.html" target="_blank">Login</a></button>
+            <button><a href="./signup.html" target="_blank">Sign Up</a></button>
             <button>Sign In</button>
         </div>
+        <div class="movies">
+            <div id="carasol"></div>
+        </div>
     </div>
+    <script>
+        // let carasolImage = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI_ZDs2HlwAW_rtO10f4k-KfKEnr9tLO0n-w&usqp=CAU", "https://occ-0-3759-3646.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYYhqK1QwowyCALJ6k_HPoB03ZFYuhl3oyW-_gMEueYFKG908yzAOi1teGIOy2yRO81xGXMlH5tMaZoS2brX2uhPfhU.webp?r=c7a", "https://occ-0-3759-3646.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABRz7fKFHlN0B1lnPfIt4CFicV44h2QKgTDSWpdhb1iTLg3MeeSIpRxZp36WMAVRuVP1GFmneq57QGB7d0YJAhPa3AUo.webp?r=63d", "https://occ-0-3759-3646.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQD0C56iZWH0FN6ddWFWPM1dywCE5CvITEGIaR0u55AnvTrvAGy7wtXmdM3XdWSHaeUn5Yl97CPUce7uG8A-j52V7Kg.webp?r=875"];
+
+        let movieObj = [
+            
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZUx1hUqwj5KSnnCcmLMjmzDPzv6pN_BfWjA&usqp=CAU",
+                name : "Avatar",
+                releaseDate : "2009",
+                rating : "1",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjCdXBlIr1QupbgMQH5KqE3QgN6geB6DsIug&usqp=CAU",
+                name : "Avengers: Endgame",
+                releaseDate : "2019",
+                rating : "2",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEM2dA7R5ySqnRY_s7_nI3DKOiag0M6pz5XQ&usqp=CAU",
+                name : "Titanic",
+                releaseDate : "1997",
+                rating : "3",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGeaKi96nqA6rloY-6uxEnnsd0fzCUj1J1w&usqp=CAU",
+                name : "Avengers: Infinity War",
+                releaseDate : "2018",
+                rating : "4",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6GJ08TQfTHCaXFqtiaUM_8Fuaz2YU67kZpw&usqp=CAU",
+                name : "Spider-Man: No Way Home",
+                releaseDate : "2021",
+                rating : "5",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcNdj3Fz1dSmzmbsp4iDmLZxOeyuWyxiQNAw&usqp=CAU",
+                name : "Jurassic World",
+                releaseDate : "	2015",
+                rating : "6",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBROwyBIidxK_glVMxIijCsJW0GQjm6jr93Q&usqp=CAU",
+                name : "Beauty and the Beast",
+                releaseDate : "2017",
+                rating : "7",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCF5Z36eF5TBhmX1W_W7a4MeoJKMettl-cdA&usqp=CAU",
+                name : "Iron Man 3",
+                releaseDate : "2013",
+                rating : "8",
+            },
+            {
+                image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUXQk23SydrTP8eNXBYuAmKkXMCBJvgNAETg&usqp=CAU",
+                name : "Minions",
+                releaseDate : "2015",
+                rating : "9",
+            }
+        ]
+        let jasonMovies = JSON.stringify(movieObj);
+        console.log(jasonMovies)
+        localStorage.setItem("myFavMovie", jasonMovies);
+        let myShoes = localStorage.getItem("myShoes");
+
+
+        
+    </script>
 </body>
 </html>
